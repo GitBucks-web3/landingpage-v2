@@ -1,0 +1,157 @@
+.parent {
+  height: 500px;
+  background: #000000;
+  padding: 0 4vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.socialLink {
+  width: 42px;
+  height: 42px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f1f1f;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.socialLink:hover {
+  box-shadow: 2px 2px 0 0 #0000ff;
+  transform: translate(-2px, -2px);
+}
+.socialLink img {
+  width: "100%";
+  height: "100%";
+}
+
+.link {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+.txt {
+  font-size: min(3vw, 20px);
+  margin-bottom: 12px;
+  font-family: Integral-Bold;
+  color: #ffffff;
+}
+
+.div1 {
+  padding: 1.2vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.logosm {
+  width: 286px;
+  height: 36px;
+}
+.div1 div {
+  width: 50%;
+  max-width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.div1 h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.div2 {
+  padding: 160px 1.2vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div3 {
+  padding: 160px 1.2vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  grid-area: 1 / 3 / 2 / 4;
+}
+.div4 {
+  padding: 165px 1.2vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  grid-area: 1 / 4 / 2 / 5;
+}
+.div4 p {
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .parent {
+    overflow-x: hidden;
+    height: 64vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 0;
+  }
+  .div1 {
+    width: 72%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  .div1 h1 {
+    font-size: 12px;
+    line-height: auto;
+  }
+  .div2 {
+    padding: 40px 1.2vw;
+    align-items: center;
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div3 {
+    padding: 40px 1.2vw;
+    align-items: center;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .div4 {
+    display: none;
+  }
+  .socialLink {
+    width: 45px;
+    height: 45px;
+    /* padding: 12px; */
+  }
+  .link h1 {
+    font-size: min(3.8vw, 24px);
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    color: aliceblue;
+  }
+}

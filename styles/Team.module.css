@@ -1,0 +1,144 @@
+@font-face {
+  font-family: Integral;
+  src: url("/IntegralCF-ExtraBold.otf");
+}
+
+/* page */
+.page {
+  background-color: #0a0a0a;
+  padding: 4vw 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 12vw;
+  justify-content: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav img {
+  height: 10vh;
+  width: auto;
+}
+.container h1 {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 54px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+.button {
+  width: 140px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.2px solid #0a0a0a;
+  border-radius: 100px;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #0a0a0a;
+}
+.button:hover {
+  background: #0a0a0a;
+  color: #fafafa;
+}
+
+/* member */
+.teamContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 12vw;
+}
+.memberContainer {
+  display: flex;
+  flex-direction: column;
+  width: min(20%, 240);
+  justify-content: center;
+}
+.memberContainer img {
+  border-radius: 8px;
+}
+.memberSub {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text h1 {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+.text h2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+.memberSub a img {
+  -webkit-filter: invert(100%); /* Safari/Chrome */
+  filter: invert(100%);
+}
+
+.textContainer {
+  width: 80vw;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 18vw;
+  /* height: 50vh; */
+  /* background-color: aqua; */
+  margin-bottom: 12vh;
+}
+
+.twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+  background-color: #ffffff;
+}
+.textContainer p {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  margin-bottom: 54px;
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .container h1 {
+    line-height: normal;
+    margin-top: 24px;
+  }
+  .teamContainer {
+    width: 100%;
+    flex-direction: column;
+    padding: 2vh 18vw;
+  }
+  .memberContainer {
+    width: 100%;
+    margin-bottom: 4vh;
+  }
+}
