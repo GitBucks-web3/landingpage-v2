@@ -26,7 +26,7 @@ const Team: NextPage = () => {
           name="Sanketh"
           role="coke head"
           img="/sanketh.png"
-          twitter="https://twitter.com/devsamuelv"
+          twitter="https://twitter.com/sankethchebbi"
         />
         <Member
           name="Suhas"
@@ -44,7 +44,7 @@ const Team: NextPage = () => {
           name="Saksham"
           role="Blockchain Dev"
           img="/saksham.jpeg"
-          twitter="https://twitter.com/devsamuelv"
+          twitter="https://twitter.com/RxW_777"
         />
       </div>
     </div>
