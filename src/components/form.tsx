@@ -15,7 +15,7 @@ const TypeformEmbed = () => {
   }, []);
 
   return (
-  <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSeS48pxhY2NQVwG06bMR2unVhd-Xlr9evlmE0ktpML257f_5w/viewform?embedded=true" width="400" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <a href="https://forms.gle/31VNU81kGjyihDvK9">Click here to join the commnity.</a>
   );
 };
 
