@@ -8,6 +8,8 @@ import React, {
   Ref,
   RefObject,
   useState,
+  ChangeEvent,
+  MouseEvent,
 } from "react";
 import { client } from "../../pages/_app";
 import {
@@ -18,17 +20,24 @@ import {
 import styles from "../../styles/PreRegister.module.css";
 import TypeformEmbed from "./form";
 
-const rulebook = {
+interface Commit {
+  repoName: string;
+  commitSHA: string;
+  commitMessage: string;
+  commitURL: string;
+}
+
+const rulebook: Record<string, number> = {
   PushEvent: 5,
   PullRequestEvent: 10,
   IssuesEvent: 3,
 };
 
 export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
-  const [username, setUsername] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [points, setPoints] = useState(0);
-  const [commits, setCommits] = useState([]);
+  const [username, setUsername] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [points, setPoints] = useState<number>(0);
+  const [commits, setCommits] = useState<Commit[]>([]);
 
   async function fetchGitHubData() {
     setLoading(true);
@@ -39,7 +48,7 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
     console.log(data);
 
     let userPoints = 0;
-    const userCommits: any = [];
+    const userCommits: Commit[] = [];
 
     data.forEach((event: any) => {
       if (event.type in rulebook) {
@@ -74,24 +83,22 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
       <div className={styles.left}>
         <div>
           <h1>Check how much you can earn</h1>
-          {/* <p className="mt-3 tracking-wide">
-            join our open beta program and get early access to Hustlex,
-            exclusive perks and more cool stuff.
-          </p> */}
         </div>
         <div className={styles.inputContainer}>
           <div className="wrapper block">
             <input
               type="text"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setUsername(e.target.value)
+              }
               placeholder=" Enter Github Username..."
             />
           </div>
           <button
             id="submit-button"
             type="button"
-            onClick={fetchGitHubData}
+            onClick={(e: MouseEvent<HTMLButtonElement>) => fetchGitHubData()}
             className="block"
           >
             {loading ? "loading..." : "Submit"}
@@ -128,7 +135,7 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <i>click</i> to check contribution
+                        <i>click</i> to check
                       </a>
                     </p>
                   </div>
