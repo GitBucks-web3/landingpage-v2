@@ -15,14 +15,7 @@ const TypeformEmbed = () => {
   }, []);
 
   return (
-    <div
-      data-tf-widget="rcOqCfOo"
-      data-tf-opacity="100"
-      data-tf-iframe-props="title=Onboarding Tree"
-      data-tf-transitive-search-params
-      data-tf-medium="snippet"
-      style={{ width: "100%", height: "500px" }}
-    ></div>
+  <iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSeS48pxhY2NQVwG06bMR2unVhd-Xlr9evlmE0ktpML257f_5w/viewform?embedded=true" width="400" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   );
 };
 

@@ -413,6 +413,11 @@ background-clip: text;
   margin-bottom: 54px;
 }
 
+.form{
+  width: 90vw;
+  height: 80vh;
+}
+
 @media (max-width: 1024px) {
   .hero nav {
     justify-content: center;
