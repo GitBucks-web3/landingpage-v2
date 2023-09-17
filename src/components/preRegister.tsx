@@ -142,8 +142,8 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
         )}
       </div>
       <div className={styles.mockup}>
-        <h1>Contact us</h1>
-        <TypeformEmbed />
+        {/* <h1>Contact us</h1> */}
+        <a href="https://forms.gle/31VNU81kGjyihDvK9">Click here to fill the form and earn GitBucks!!!</a>
       </div>
     </div>
   );

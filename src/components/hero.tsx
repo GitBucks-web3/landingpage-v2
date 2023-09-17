@@ -17,7 +17,7 @@ const Hero: FC<Props> = ({ onScroll, title, description }) => {
         <img src="/hero.png" alt="hero" />
       </div>
       <p className={styles.subText}>
-        A community to earn Gitbucks for contributing to OSS!!
+        A community to earn Gitbucks for contributing to OSS!!!
       </p>
       <a href="#join" className={styles.down}>
         <img

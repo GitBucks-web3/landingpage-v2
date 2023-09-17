@@ -37,6 +37,17 @@
 
   border-left: #141414 solid 2px;
 }
+.mockup a {
+  padding: 24px;
+  background-color: #ffffff;
+  font-family: "Integral-Bold";
+  color: #121212;
+  background: linear-gradient(225deg, #C57F44 0%, #F28C0C 23.44%, #7BC2FF 46.88%, #347FFC 67.19%, #D78659 100%);
+  background-clip: text;
+  font-size: 2.4vw;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .mockup img {
   opacity: 0.2;
   height: 742px;
@@ -181,6 +192,9 @@
   .mockup {
     width: 100%;
     border: #292929 solid 2px;
+  }
+  .mockup a {
+    font-size: 4vh;
   }
   .mockup img {
     display: none;
