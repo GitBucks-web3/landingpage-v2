@@ -18,7 +18,7 @@ const Team: NextPage = () => {
       <div className={styles.teamContainer}>
         <Member
           name="Toshita"
-          role="Engineer"
+          role="Existing"
           img="/toshita.jpg"
           twitter="https://twitter.com/toshitapandey"
         />
