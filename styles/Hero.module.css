@@ -136,7 +136,7 @@
 
 .subText {
   position: absolute;
-  top: 70vh;
+  top: 80vh;
   left: 8vw;
   width: 300px;
   height: 300px;
@@ -290,7 +290,7 @@ background-clip: text;
 }
 
 .mockups Img {
-  height: 54%;
+  height: 70%;
   object-fit: cover;
 }
 .mockup1, .mockup2 {
@@ -435,9 +435,9 @@ background-clip: text;
     font-size: 24px;
   }
   .subText {
-    width: 24vw;
+    width: 50vw;
     font-size: 16px;
-    top: 70vh;
+    top: 85vh;
   }
   .down {
     top: 80vh;
@@ -470,11 +470,11 @@ background-clip: text;
     padding: 10vw 8vw;
   }
   .info h1 {
-    font-size: 34px;
+    font-size: 30px;
   }
   .info i {
     width: 100%;
-    font-size: 34px;
+    font-size: 30px;
     text-align: left;
   }
   .info p {
@@ -535,7 +535,4 @@ background-clip: text;
     width: 100%;
     padding: 8vw;
   }
-
-  
-
 }

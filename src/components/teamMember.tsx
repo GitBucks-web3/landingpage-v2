@@ -9,6 +9,10 @@ interface Props {
   twitter?: string;
 }
 
+const URL = () => {
+  return "https://static.dezeen.com/uploads/2023/07/x-logo-twitter-elon-musk_dezeen_2364_col_0.jpg"
+}
+
 // SubHero
 const Member = (props: Props) => {
   return (
@@ -20,7 +24,7 @@ const Member = (props: Props) => {
           <h2>{props.role}</h2>
         </div>
         <a className={styles.twitter} href={props.twitter}>
-          <Image width={18} height={18} src={"/../public/twitter.png"} alt="x" />
+          <Image width={24} height={24} loader={URL} src={"me.png"} alt="x" />
         </a>
       </div>
     </div>

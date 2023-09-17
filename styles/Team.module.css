@@ -128,6 +128,9 @@
 }
 
 @media (max-width: 1024px) {
+  .page {
+    display: none;
+  }
   .container h1 {
     line-height: normal;
     margin-top: 24px;

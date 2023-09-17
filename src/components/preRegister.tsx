@@ -85,7 +85,6 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
           <h1>Check how much you can earn</h1>
         </div>
         <div className={styles.inputContainer}>
-          <div className="wrapper block">
             <input
               type="text"
               value={username}
@@ -94,12 +93,9 @@ export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
               }
               placeholder=" Enter Github Username..."
             />
-          </div>
           <button
-            id="submit-button"
             type="button"
             onClick={(e: MouseEvent<HTMLButtonElement>) => fetchGitHubData()}
-            className="block"
           >
             {loading ? "loading..." : "Submit"}
           </button>

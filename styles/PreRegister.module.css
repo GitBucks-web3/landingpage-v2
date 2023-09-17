@@ -90,12 +90,30 @@
   flex-direction: row;
   margin-top: 12px;
 }
+.inputContainer input {
+  width: 20vw;
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: #121212;
+  background-color: #ffffff;
+  font-family: "Outfit";
+}
+.inputContainer button {
+  padding: 12px;
+  border-radius: 4px;
+  margin-left: 12px;
+  background-color: #ffffff;
+  font-family: "Integral-Bold";
+}
 .commitContainer {
   width: 100%;
   height: 30vh;
   overflow: scroll;
   overflow-x: hidden;
   padding-right: 10px;
+}
+.commitContainer h3 {
+  color: #ffffff;
 }
 .commit {
   width: 100%;
@@ -184,5 +202,9 @@
   .download a {
     width: 20vw;
     height: 20vw;
+  }
+
+  .inputContainer input {
+    width: 100%
   }
 }
