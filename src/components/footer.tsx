@@ -42,18 +42,13 @@ export const Footer = () => {
         <h1>© 2023 | GitBucks labs</h1>
       </div>
       <div className={styles.div2}>
-        <Link name="About" href="/about" />
-        <Link name="Team" href="/team" />
-        <Link name="Carrer" href="/career" />
+        <Link name="About" href="#about" />
+        <Link name="Team" href="#team" />
         {/* <Link name="Pitch Deck" href="/pitch-deck.pdf" /> */}
       </div>
       <div className={styles.div3}>
-        <Link name="Terms" href="/terms" />
-        <Link name="Privacy policy" href="/privacy" />
-        <Link
-          name="Get access"
-          href="https://play.google.com/store/apps/details?id=com.hustlex.mvp"
-        />
+        <Link name="Terms of service" href="#" />
+        <Link name="Contact" href="#join" />
       </div>
     </div>
   );

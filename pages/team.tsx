@@ -11,14 +11,14 @@ import styles from "../styles/Team.module.css";
 
 const Team: NextPage = () => {
   return (
-    <div className={styles.page}>
+    <div className={styles.page} id="team">
       <div className={styles.container}>
         <h1>meet our team.</h1>
       </div>
       <div className={styles.teamContainer}>
         <Member
           name="Toshita"
-          role="Enginner"
+          role="Engineer"
           img="/toshita.jpg"
           twitter="https://twitter.com/toshitapandey"
         />

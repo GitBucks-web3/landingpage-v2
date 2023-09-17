@@ -1,10 +1,5 @@
 import { useToast } from "@chakra-ui/react";
 import Image from "next/image";
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  PlusCircleIcon,
-} from "@heroicons/react/outline";
 import React, {
   FC,
   ForwardedRef,
@@ -21,86 +16,131 @@ import {
 } from "../../queries/preRegister.query";
 
 import styles from "../../styles/PreRegister.module.css";
+import TypeformEmbed from "./form";
+
+const rulebook = {
+  PushEvent: 5,
+  PullRequestEvent: 10,
+  IssuesEvent: 3,
+};
 
 export const PreRegister = forwardRef<HTMLInputElement>((_, ref) => {
-  const [loading, setLoading] = useState<boolean>();
-  const [email, setEmail] = useState<string>();
+  const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [points, setPoints] = useState(0);
+  const [commits, setCommits] = useState([]);
 
-  const toast = useToast();
-
-  const preRegister = async () => {
-    if (email == null || !email.includes("@") || !email.includes(".")) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email.",
-        status: "error",
-      });
-
-      return;
-    }
-
+  async function fetchGitHubData() {
     setLoading(true);
-    const res = client.query<PRE_REGISTER_QUERY_RESULT>({
-      query: PRE_REGISTER_QUERY,
-      variables: {
-        email,
-      },
+    const response = await fetch(
+      `https://api.github.com/users/${username}/events/public`
+    );
+    const data = await response.json();
+    console.log(data);
+
+    let userPoints = 0;
+    const userCommits: any = [];
+
+    data.forEach((event: any) => {
+      if (event.type in rulebook) {
+        if (event.type === "PushEvent") {
+          const repoName = event.repo.name;
+          const commitSHA = event.payload.commits[0]?.sha;
+          const commitMessage = event.payload.commits[0]?.message;
+          const commitURL = `https://github.com/${repoName}/commit/${commitSHA}`;
+
+          if (event.org) {
+            userPoints += rulebook[event.type];
+            userCommits.push({
+              repoName,
+              commitSHA,
+              commitMessage,
+              commitURL,
+            });
+          }
+        } else {
+          userPoints += rulebook[event.type];
+        }
+      }
     });
 
-    await res
-      .then(() =>
-        toast({
-          title: "Congratulations",
-          description: "You are now on the BETA waitlist!",
-          status: "success",
-        })
-      )
-      .catch(({ message }) => {
-        toast({
-          title: "Error",
-          description: message,
-          status: "error",
-        });
-      })
-      .finally(() => setLoading(false));
-  };
+    setPoints(userPoints);
+    setCommits(userCommits);
+    setLoading(false);
+  }
 
   return (
     <div ref={ref} className={styles.container} id="join">
       <div className={styles.left}>
         <div>
-          <i>
-            <h1>Check how much you can earn</h1>
-          </i>
+          <h1>Check how much you can earn</h1>
           {/* <p className="mt-3 tracking-wide">
             join our open beta program and get early access to Hustlex,
             exclusive perks and more cool stuff.
           </p> */}
         </div>
-
-        In
-        <button className="block">Hello, World!</button>
-        <div className={styles.download}>
-          <div>
-            <Image
-              width={100}
-              height={100}
-              src="/QR.png"
-              alt="Playstore Link"
+        <div className={styles.inputContainer}>
+          <div className="wrapper block">
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder=" Enter Github Username..."
             />
           </div>
-          <a href="https://play.google.com/store/apps/details?id=com.hustlex.mvp">
-            <Image
-              width={100}
-              height={100}
-              src="/playstore-icon.png"
-              alt="Playstore Link"
-            />
-          </a>
+          <button
+            id="submit-button"
+            type="button"
+            onClick={fetchGitHubData}
+            className="block"
+          >
+            {loading ? "loading..." : "Submit"}
+          </button>
         </div>
+
+        {points > 0 && (
+          <h4 className={styles.points}>
+            {" "}
+            You can earn : <i>{points} GBT tokens</i>
+          </h4>
+        )}
+        {points > 0 && (
+          <div className={styles.commitContainer} id="commits">
+            {commits.length > 0 && (
+              <>
+                <h3>Recent Commits:</h3>
+                {commits.map((commit, index) => (
+                  <div className={styles.commit} key={index}>
+                    <p>
+                      {" "}
+                      <strong>Repository: </strong>
+                      {commit.repoName}
+                    </p>
+                    <p>
+                      {" "}
+                      <strong>Commit Message:</strong> {commit.commitMessage}
+                    </p>
+                    <p>
+                      {" "}
+                      <strong>Commit URL:</strong>{" "}
+                      <a
+                        href={commit.commitURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i>click</i> to check contribution
+                      </a>
+                    </p>
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+        )}
       </div>
       <div className={styles.mockup}>
-        <img src="/UI-MOCKUP-1.png" alt="mockup" />
+        <h1>Contact us</h1>
+        <TypeformEmbed />
       </div>
     </div>
   );

@@ -5,27 +5,46 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  border: #141414 solid 2px;
 }
 .left {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: start;
   padding: 12vh 10vw;
 }
+.left div h1 {
+  line-height: normal;
+  font-size: 2.4vw;
+  font-family: "Integral-Bold", sans-serif;
+}
 .mockup {
-  height: 100%;
+  width: 100%;
+  height: 740px;
+  padding: 0 8vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #9833FF;
+  background: #000000;
   border-left: 2.4px solid #000000;
 
   width: 50%;
-  height: 90vh;
   object-fit: cover;
+
+  border-left: #141414 solid 2px;
+}
+.mockup img {
+  opacity: 0.2;
+  height: 742px;
+  width: 50vw;
+  position: absolute;
+}
+.mockup h1 {
+  margin-bottom: 2vh;
 }
 .container h1 {
   width: 100%;
@@ -34,9 +53,9 @@
   font-size: 54px;
   line-height: 69px;
   color: #ffffff;
+  z-index: 1;
 }
 .container p {
-  width: 74%;
   margin-top: 20px;
   color: #ffffff;
   font-weight: 300;
@@ -46,12 +65,70 @@
   line-height: 25px;
 }
 
+.left h4 {
+  font-size: 24px;
+  font-family: "Outfit", sans-serif ;
+  color: #ffffff;
+}
+.left i {
+  font-family: "Integral-Bold-Oblique", sans-serif ;
+  background: linear-gradient(45deg, #F89212 14.05%, #7EC4FD 39.84%, #093DAB 61.27%, #6E61E6 90.24%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* inline-flex mt-10 w-full  lg:mt-0 */
 .download {
   display: flex;
   margin-top: 40px;
   width: 100%;
 }
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+}
+.commitContainer {
+  width: 100%;
+  height: 30vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+.commit {
+  width: 100%;
+  padding: 4px 8px;
+  background-color: #141414;
+  margin-bottom: 12px;
+  border: #292929 solid 1px;
+  border-radius: 5px;
+}
+.commit p {
+  font-size: 14px;
+  margin: 0%;
+  max-lines: 2;
+}
+
+/* width */
+.commitContainer::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.commitContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #292929;
+  border-radius: 4px;
+}
+
+/* Handle */
+.commitContainer::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #F89212 14.05%, #7EC4FD 39.84%, #093DAB 61.27%, #6E61E6 90.24%);
+  border-radius: 4px;
+}
+
+
 .download div {
   width: 4vw;
   height: 4vw;
@@ -74,13 +151,31 @@
   height: 100%;
 }
 
+/* COMMIT */
+
+
 @media (max-width: 1024px) {
+  .container {
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+  }
   .mockup {
+    width: 100%;
+    border: #292929 solid 2px;
+  }
+  .mockup img {
     display: none;
   }
   .left {
     width: 100%;
-    height: 100%;
+    /* height: 70vh; */
+  }
+  .left div h1 {
+    font-size: 8vw;
+  }
+  .mockup h1 {
+    font-size: 6vw;
   }
   .download div {
     width: 20vw;

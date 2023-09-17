@@ -6,7 +6,7 @@ import styles from "../styles/Team.module.css";
 
 const Team = () => {
   return (
-    <div className={styles.page} id="team">
+    <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.nav}>
           <Image width={72} height={72} src="/logo-p.png" alt="logo" />

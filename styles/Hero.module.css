@@ -8,8 +8,17 @@
   src: url("/IntegralCF-Bold.otf");
 }
 @font-face {
+  font-family: Integral-Bold-Oblique;
+  src: url("/IntegralCF-BoldOblique.otf");
+}
+@font-face {
   font-family: PlayFair;
   src: url("/PlayfairDisplay.ttf");
+}
+
+.container{
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .mainText {
@@ -27,13 +36,11 @@
 /* hero styling */
 .hero {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid #f9f9f9;
-  background-color: #000000;
 }
 .hero img {
   width: 100%;
@@ -74,27 +81,91 @@
   border-radius: 50px;
   color: #f9f9f9;
 }
+
 .herobg {
   position: absolute;
   width: 100%;
-  height: 900px;
-  object-fit: cover;
+  height: 100vh;
   z-index: -1;
+  background-color: #000;
 }
+.herobg img {
+  margin: auto;
+  width: auto;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 70vh;
+  right: max(8vw, 80px);
+  /* animation: rotation 5s infinite linear; */
+}
+.arrow {
+  position: absolute;
+  width: min(4vw, 40px);
+  height: min(4vw, 40px);
+}
+.circle:hover {
+  animation: rotation 3s infinite linear;
+}
+
+.circle {
+  width: min(10vw, 150px);
+  height: min(10vw, 150px);
+  border-radius: 50%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.subText {
+  position: absolute;
+  top: 70vh;
+  left: 8vw;
+  width: 300px;
+  height: 300px;
+  font-family: Outfit;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+  background: linear-gradient(225deg, #C57F44 0%, #F28C0C 23.44%, #7BC2FF 46.88%, #347FFC 67.19%, #D78659 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
 .hero h1 {
-  font-family: PlayFair, sans-serif;
+  font-family: Integral-Bold, sans-serif;
   font-size: 90px;
   font-weight: 600;
   line-height: 100%;
   color: #ffffff;
   text-align: center;
-  /* background: linear-gradient(47deg, #F89212 14.05%, #7EC4FD 39.84%, #093DAB 61.27%, #6E61E6 90.24%); */
-
-  line-height: 85%;
+  background: linear-gradient(45deg, #F89212 14.05%, #7EC4FD 39.84%, #093DAB 61.27%, #6E61E6 90.24%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero i {
-  color: #acacff;
-  font-weight: 1000;
+  font-family: Integral-Bold-Oblique, sans-serif;
 }
 .hero h2 {
   font-family: "Outfit", sans-serif;
@@ -144,7 +215,7 @@
 .dummy {
   height: 100%;
   width: 1px;
-  background-color: #f9f9f9;
+  background-color: #292929;
 }
 .info {
   width: 100%;
@@ -172,11 +243,14 @@
   width: 100%;
 }
 .info i {
-  font-family: "PlayFair", sans-serif;
+  font-family: "Integral-Bold-Oblique", sans-serif;
   font-weight: 800;
-  font-size: min(4.2vw, 54px);
+  font-size: 50px;
   line-height: 120%;
-  color: #0000ff;
+  background: linear-gradient(45deg, #F89212 14.05%, #7EC4FD 39.84%, #093DAB 61.27%, #6E61E6 90.24%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: left;
   width: 100%;
 }
@@ -216,7 +290,7 @@
 }
 
 .mockups Img {
-  height: 100%;
+  height: 54%;
   object-fit: cover;
 }
 .mockup1, .mockup2 {
@@ -342,19 +416,41 @@
 @media (max-width: 1024px) {
   .hero nav {
     justify-content: center;
-    padding: 1vh 0vw;
+    padding: 2.4vh;
   }
   .button{
     display: none;
   }
+  .github{
+    display: none;
+  }
+  .herobg img {
+    opacity: 1;
+  }
   .hero h1{
-    font-size: 12vw;
+    font-size: 8vw;
   }
   .hero h2 {
     width: 100%;
     font-size: 24px;
   }
-
+  .subText {
+    width: 24vw;
+    font-size: 16px;
+    top: 70vh;
+  }
+  .down {
+    top: 80vh;
+    right: 5vw;
+  }
+  .arrow{
+    width: 4vw;
+    height: 4vw;
+  }
+  .circle{
+    width: 12vh;
+    height: 12vh;
+  }
   .dummy{
     display: none;
   }
@@ -374,11 +470,11 @@
     padding: 10vw 8vw;
   }
   .info h1 {
-    font-size: 42px;
+    font-size: 34px;
   }
   .info i {
     width: 100%;
-    font-size: 42px;
+    font-size: 34px;
     text-align: left;
   }
   .info p {
@@ -387,11 +483,19 @@
   }
 
   .mockupbg {
-    display: none;
+    height: 50vh;
+    width: 100vw;
   }
   .mockups {
-    height: auto;
+    border: #292929 solid 1px;
+    height: 50vh;
     flex-direction: column;
+    padding: 4vw;
+  }
+  .mockups Img {
+    width: 85%;
+    height: auto;
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   .mockup1, .mockup2 {
     width: 100%;
