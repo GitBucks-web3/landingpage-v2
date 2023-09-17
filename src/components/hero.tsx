@@ -90,6 +90,7 @@ const Hero: FC<Props> = ({ onScroll, title, description }) => {
       <div className={styles.mockups}>
         <img src="/mockup-1.png" alt="mockup" />
       </div>
+      <Team />
       {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeS48pxhY2NQVwG06bMR2unVhd-Xlr9evlmE0ktpML257f_5w/viewform?embedded=true" width="240" height="1239" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
     </>
   );
